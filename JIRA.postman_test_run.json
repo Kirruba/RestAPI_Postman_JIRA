@@ -1,0 +1,235 @@
+{
+	"id": "cf1c6cb5-bce6-4b22-bab5-84c2c2a58778",
+	"name": "JIRA",
+	"timestamp": "2022-12-01T07:17:27.065Z",
+	"collection_id": "24455667-bc30609d-7cb7-4a00-bfda-629b6144c1ac",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 7,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "b2472f84-ad27-45c0-a9ea-d68b430da750",
+			"name": "CreateIssue",
+			"url": "https://kirruba263.atlassian.net/rest/api/2/issue/",
+			"time": 896,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {
+				"Create issue is succesful with status code: 201": true
+			},
+			"testPassFailCounts": {
+				"Create issue is succesful with status code: 201": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				896
+			],
+			"allTests": [
+				{
+					"Create issue is succesful with status code: 201": true
+				}
+			]
+		},
+		{
+			"id": "70c832bf-8fd0-4b6a-9c4e-9cbfdbedcfdc",
+			"name": "SearchIssue",
+			"url": "https://kirruba263.atlassian.net/rest/api/2/issue/10047",
+			"time": 384,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Search issue is succesful with status code: 200": true
+			},
+			"testPassFailCounts": {
+				"Search issue is succesful with status code: 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				384
+			],
+			"allTests": [
+				{
+					"Search issue is succesful with status code: 200": true
+				}
+			]
+		},
+		{
+			"id": "ba52d749-a29b-4f7b-b4ab-e6d8d2852d50",
+			"name": "EditIssue",
+			"url": "https://kirruba263.atlassian.net/rest/api/2/issue/10047",
+			"time": 499,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Editing an issue is successful with status code: 204": true
+			},
+			"testPassFailCounts": {
+				"Editing an issue is successful with status code: 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				499
+			],
+			"allTests": [
+				{
+					"Editing an issue is successful with status code: 204": true
+				}
+			]
+		},
+		{
+			"id": "3b6126cc-135d-4fe1-a582-8ef013d3612c",
+			"name": "DeleteIssue",
+			"url": "https://kirruba263.atlassian.net/rest/api/2/issue/API-33",
+			"time": 962,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {
+				"Deleting an issue is successful with status code: 204": true
+			},
+			"testPassFailCounts": {
+				"Deleting an issue is successful with status code: 204": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				962
+			],
+			"allTests": [
+				{
+					"Deleting an issue is successful with status code: 204": true
+				}
+			]
+		},
+		{
+			"id": "f05ff658-6bfb-41b6-b9cc-1f5d92588add",
+			"name": "SearchAllIssues",
+			"url": "https://kirruba263.atlassian.net/rest/api/2/search?jql=project=%22Api%22",
+			"time": 578,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Searching for all issues is successful with status code: 200": true
+			},
+			"testPassFailCounts": {
+				"Searching for all issues is successful with status code: 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				578
+			],
+			"allTests": [
+				{
+					"Searching for all issues is successful with status code: 200": true
+				}
+			]
+		},
+		{
+			"id": "6a02c2a9-f793-491b-a6ef-460124ce26d2",
+			"name": "IssueTypes",
+			"url": "https://kirruba263.atlassian.net/rest/api/2/issuetype",
+			"time": 266,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Getting all Issue Types is successful with status code: 200": true
+			},
+			"testPassFailCounts": {
+				"Getting all Issue Types is successful with status code: 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				266
+			],
+			"allTests": [
+				{
+					"Getting all Issue Types is successful with status code: 200": true
+				}
+			]
+		},
+		{
+			"id": "3f7ce2c5-85db-48fa-bb8a-9d9678e7f10a",
+			"name": "IssueTypeWithID",
+			"url": "https://kirruba263.atlassian.net/rest/api/2/issuetype/10010",
+			"time": 277,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Specific Issue type with Id 10010 is found with status code: 200": true
+			},
+			"testPassFailCounts": {
+				"Specific Issue type with Id 10010 is found with status code: 200": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				277
+			],
+			"allTests": [
+				{
+					"Specific Issue type with Id 10010 is found with status code: 200": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 3862,
+	"collection": {
+		"requests": [
+			{
+				"id": "b2472f84-ad27-45c0-a9ea-d68b430da750",
+				"method": "POST"
+			},
+			{
+				"id": "70c832bf-8fd0-4b6a-9c4e-9cbfdbedcfdc",
+				"method": "GET"
+			},
+			{
+				"id": "ba52d749-a29b-4f7b-b4ab-e6d8d2852d50",
+				"method": "PUT"
+			},
+			{
+				"id": "3b6126cc-135d-4fe1-a582-8ef013d3612c",
+				"method": "DELETE"
+			},
+			{
+				"id": "f05ff658-6bfb-41b6-b9cc-1f5d92588add",
+				"method": "GET"
+			},
+			{
+				"id": "6a02c2a9-f793-491b-a6ef-460124ce26d2",
+				"method": "GET"
+			},
+			{
+				"id": "3f7ce2c5-85db-48fa-bb8a-9d9678e7f10a",
+				"method": "GET"
+			}
+		]
+	}
+}

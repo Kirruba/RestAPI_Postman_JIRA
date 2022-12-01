@@ -1,0 +1,45 @@
+{
+	"id": "993295fb-6659-4cef-81af-f71ebf612335",
+	"values": [
+		{
+			"key": "G_sysid",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "G_incident",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "G_UUid",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "G_Id",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "G_Key",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "G_IssueTypeID",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2022-12-01T07:24:52.612Z",
+	"_postman_exported_using": "Postman/10.5.7"
+}

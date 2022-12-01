@@ -1,0 +1,350 @@
+{
+	"info": {
+		"_postman_id": "bc30609d-7cb7-4a00-bfda-629b6144c1ac",
+		"name": "JIRA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24455667"
+	},
+	"item": [
+		{
+			"name": "CreateIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create issue is succesful with status code: 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"Resp = pm.response.json();\r",
+							"\r",
+							"Id = Resp.id;\r",
+							"Key = Resp.key;\r",
+							"\r",
+							"pm.globals.set(\"G_Id\", Id);\r",
+							"pm.globals.set(\"G_Key\", Key);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"project\": {\r\n            \"key\": \"API\"\r\n        },\r\n        \"summary\": \"create issue in RA project\",\r\n        \"description\": \"Creating of an issue using project keys and issue type names using the REST API\",\r\n        \"issuetype\": {\r\n            \"name\": \"Bug\"\r\n        }\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kirruba263.atlassian.net/rest/api/2/issue/",
+					"protocol": "https",
+					"host": [
+						"kirruba263",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Search issue is succesful with status code: 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kirruba263.atlassian.net/rest/api/2/issue/{{G_Id}}",
+					"protocol": "https",
+					"host": [
+						"kirruba263",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{G_Id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "EditIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Editing an issue is successful with status code: 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"fields\": {\r\n        \"description\": \"Bug creation Using REST API for testing\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://kirruba263.atlassian.net/rest/api/2/issue/{{G_Id}}",
+					"protocol": "https",
+					"host": [
+						"kirruba263",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{G_Id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteIssue",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Deleting an issue is successful with status code: 204\", function () {\r",
+							"    pm.response.to.have.status(204);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://kirruba263.atlassian.net/rest/api/2/issue/{{G_Key}}",
+					"protocol": "https",
+					"host": [
+						"kirruba263",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issue",
+						"{{G_Key}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "SearchAllIssues",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Searching for all issues is successful with status code: 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kirruba263.atlassian.net/rest/api/2/search?jql=project=\"Api\"",
+					"protocol": "https",
+					"host": [
+						"kirruba263",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"search"
+					],
+					"query": [
+						{
+							"key": "jql",
+							"value": "project=\"Api\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IssueTypes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"Resp = pm.response.json();\r",
+							"\r",
+							"for (item of Resp) {\r",
+							"    console.log(\"Issue Type:\" + item.name);\r",
+							"}\r",
+							"\r",
+							"count = Resp.length;\r",
+							"\r",
+							"RandId = _.random(count);\r",
+							"\r",
+							"Issuetype_ID = Resp[RandId].id;\r",
+							"\r",
+							"console.log(\"Random ID of Issue Type: \" + Issuetype_ID);\r",
+							"\r",
+							"pm.globals.set(\"G_IssueTypeID\", Issuetype_ID);\r",
+							"\r",
+							"pm.test(\"Getting all Issue Types is successful with status code: 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kirruba263.atlassian.net/rest/api/2/issuetype",
+					"protocol": "https",
+					"host": [
+						"kirruba263",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issuetype"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "IssueTypeWithID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Specific Issue type with Id \" + pm.globals.get(\"G_IssueTypeID\") + \" is found with status code: 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://kirruba263.atlassian.net/rest/api/2/issuetype/{{G_IssueTypeID}}",
+					"protocol": "https",
+					"host": [
+						"kirruba263",
+						"atlassian",
+						"net"
+					],
+					"path": [
+						"rest",
+						"api",
+						"2",
+						"issuetype",
+						"{{G_IssueTypeID}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "UEU2N3F3eIkrLaMhvlJI893E",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "abusakshi96@gmail.com",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
